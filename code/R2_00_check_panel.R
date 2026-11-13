@@ -1,8 +1,0 @@
-df <- readRDS("./data/panel_od_year_truck_sctg01_07.rds")
-cat("Dimensions:", nrow(df), "x", ncol(df), "\n")
-cat("Columns:\n")
-cat(paste(names(df), collapse = "\n"), "\n")
-cat("\nHas dms_orig:", "dms_orig" %in% names(df), "\n")
-cat("Has dms_dest:", "dms_dest" %in% names(df), "\n")
-cat("\nHead:\n")
-print(head(df[, 1:8]))
