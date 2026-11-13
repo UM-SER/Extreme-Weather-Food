@@ -7,7 +7,6 @@ This repository contains the replication code and data for the manuscript *"Asso
 - `code/`: all scripts, in one folder. Run them from the repository root.
   - `00`–`09`: main data construction, analysis, and figures, numbered in run order.
   - `R2_*`: scripts added in the second-round revision (supplementary tables and reproducibility checks).
-  - `archive_route_generation_original_2025-10-11.R`: the original working script that produced the route table, kept for transparency.
 - `data/`: raw inputs that are small enough to include, all intermediate files, and the analysis panels.
   - `data/FAF/`: Freight Analysis Framework metadata.
   - `data/Shapefile/`: county, state, and CFS area boundaries.
@@ -122,7 +121,7 @@ Extreme-weather definitions:
 | R2 | `R2_16_check_routes_within_conus.R` | internet access (OSRM) | `data/Route/route_conus_check.csv`, `od_route_geometries_rerouted.gpkg` (interim check, superseded by R2_19/R2_20) |
 | R2 | `R2_17_sample_route_geometries.R` | full route lines from R2_19 | `data/Route/od_route_geometries_sample.gpkg` (run before step 8) |
 | R2 | `R2_18_why_258_routes_missing.R` | internet access (OSRM) | `tables/diagnostics/18_why_258_routes_missing.csv`, `_log.txt` (diagnostic only) |
-| R2 | `R2_15_supplementary_tables.R` | — | `tables/supplementary/` (Tables S3–S8, S10–S11 in the supplement's layout) |
+| R2 | `R2_15_supplementary_tables.R` | — | `tables/supplementary/` (Tables S3–S8 in the supplement's layout) |
 | R2 | `R2_01_faf_zone_route_count.R` | FAF CSV | `tables/supplementary/TableS1_sctg_composition.csv` |
 | R2 | `R2_21_route_sample_summary.R` | — (run after R2_15) | `tables/route_sample_summary.xlsx`: route sample and the routes and observations behind every table and figure |
 
