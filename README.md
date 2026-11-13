@@ -145,7 +145,7 @@ All intermediate files from steps 0–6 are included in the repository. Steps 7 
 | Table S2 | `tables/TableS2_summary_stats.csv` | `R2_05_summary_statistics.R` | main and SCTG panels |
 | Tables S3–S8 | `tables/supplementary/TableS3_*.csv` … `TableS8_*.csv`; all in `supplementary_tables.md` | `R2_15_supplementary_tables.R` | main and SCTG panels |
 
-Tables S4 and S5 are also written in `fixest` format by `R2_02` (`tables/TableS4_OD_FE_*.txt`, with an extra column using both fixed effects) and `R2_04` (`tables/TableS5_SCTG_*.txt`). Table S9 (data sources) is text only.
+Tables S4 and S5 are also written in `fixest` format by `R2_02` (`tables/TableS4_OD_FE_*.txt`, with an extra column using both fixed effects) and `R2_04` (`tables/TableS5_SCTG_*.txt`). Table S9 (data sources) and Table S10 (data procedures) are text only.
 
 Results for the alternative specifications are in sibling folders of `tables/main/results_3sd/avg_weighted/`:
 - `dist_weighted/`: distance-weighted exposure;
