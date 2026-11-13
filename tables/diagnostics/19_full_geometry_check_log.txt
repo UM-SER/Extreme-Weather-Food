@@ -1,0 +1,20 @@
+Full-geometry check, run 2026-11-10 
+
+                    status     N
+                    <char> <int>
+1:        Alaska or Hawaii     3
+2: intra-zone (not routed)   129
+3:                      ok 12241
+
+Old rule (route_conus_check.csv) vs full-line rule:
+   within_conus_old within_conus_full     N
+             <lgcl>            <lgcl> <int>
+1:            FALSE             FALSE   177
+2:             TRUE             FALSE    23
+3:             TRUE              TRUE 12173
+
+Outside miles among routed lines that fail:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  185.2   236.1   495.1   497.2   661.5   765.4 
+
+Routes in sample under full-line rule: 12173 

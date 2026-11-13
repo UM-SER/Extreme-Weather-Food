@@ -1,0 +1,24 @@
+Step 0  FAF5.6.1 raw records: 2398402 
+        domestic zones in data: 132 
+Step 1  domestic (trade_type == 1): 522752 
+Step 2  SCTG 01-07: 49380  records; 13671 OD pairs (any mode)
+        of which truck records: 34672 ; 12373 OD pairs with any truck record
+        years in data: 2018, 2019, 2020, 2021, 2022, 2023 
+Step 3  OD x year (all modes summed): 82026  = 13671 OD x 6 years
+Step 4  keep truck_tons > 0: 74238  rows; 12373 OD pairs
+        years per OD:
+
+    6 
+12373 
+Step 5  zone -> GEOID matched: 74238  rows; 12373 OD pairs
+        => panel_od_year_truck_sctg01_07_all_routes.rds has 74238 rows
+
+Step 6  routes touching Alaska (20) / Hawaii (151, 159):
+# A tibble: 3 × 3
+  dms_orig dms_dest years
+     <dbl>    <dbl> <int>
+1       20       20     6
+2      151      151     6
+3      159      159     6
+        rows removed: 18  -> remaining 74220 rows, 12370 OD pairs
+        (truck SCTG 01-07 records involving AK/HI in raw FAF: 3 OD pairs)

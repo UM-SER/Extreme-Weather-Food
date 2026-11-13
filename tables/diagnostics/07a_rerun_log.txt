@@ -1,0 +1,20 @@
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading Data...
+Running 3SD Specifications...
+  -> Saving to: ./tables/main/results_3sd/dist_weighted
+  -> Saving to: ./tables/main/results_3sd/avg_weighted
+Running 5C Specifications...
+  -> Saving to: ./tables/main/results_5c/dist_weighted
+  -> Saving to: ./tables/main/results_5c/avg_weighted
+Generating Comparison Tables (Table 5)...
+Done! Check directory: ./tables/main

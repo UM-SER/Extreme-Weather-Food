@@ -1,0 +1,17 @@
+Wind > 8 m/s                     n=1796  corr=0.7367  max|diff|=27.1667  share exact(<1e-6)=0.000
+Wind > 10 m/s                    n=1699  corr=1.0000  max|diff|=0.0000  share exact(<1e-6)=1.000
+          used (Mb) gc trigger  (Mb)  max used  (Mb)
+Ncells  650399 34.8    1434022  76.6    847779  45.3
+Vcells 7651141 58.4   84510127 644.8 105567923 805.5
+Precip > 50 mm                   n=1776  corr=1.0000  max|diff|=0.0000  share exact(<1e-6)=1.000
+          used (Mb) gc trigger  (Mb)  max used  (Mb)
+Ncells  650480 34.8    1434022  76.6    847779  45.3
+Vcells 7684432 58.7   84532821 645.0 105567923 805.5
+Hot: mean_JJA + 3*sd_JJA         n=1777  corr=0.9699  max|diff|=16.5833  share exact(<1e-6)=0.488
+
+Baseline sd_JJA (interannual SD of JJA mean tmax), deg C:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.4336  1.1405  1.3681  1.3930  1.6686  2.2384 
+Implied hot threshold above JJA mean (3*sd), deg C:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.301   3.421   4.104   4.179   5.006   6.715 

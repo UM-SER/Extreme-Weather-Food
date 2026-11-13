@@ -1,0 +1,133 @@
+FAF_ID,zone_name,zone_type,representative_GEOID,representative_unit,point_method,route_lon,route_lat,cfs_internal_point_lon,cfs_internal_point_lat,offset_miles_vs_cfs_internal_point
+011,"Birmingham-Hoover-Talladega, AL  CFS Area",CFS Metro Area,01009,Blount,point-on-surface of representative county,-86.54903,33.99628,-86.56644,33.97736,1.6
+012,"Mobile-Daphne-Fairhope, AL  CFS Area",CFS Metro Area,01097,Mobile,point-on-surface of representative county,-88.21846,30.74448,-88.19657,30.68457,4.3
+019,Remainder of Alabama,Remainder of State,01027,Clay,point-on-surface of representative county,-85.81143,33.29525,-85.86353,33.2704,3.5
+020,Alaska,Whole-State Zone,00002,(state centroid) Alaska,state polygon centroid,-152.21161,64.19865,-152.38278,63.92108,19.9
+041,"Phoenix-Mesa-Scottsdale, AZ  CFS Area",CFS Metro Area,04021,Pinal,point-on-surface of representative county,-111.32611,32.83367,-111.36639,32.91854,6.3
+042,"Tucson-Nogales, AZ  CFS Area",CFS Metro Area,04019,Pima,point-on-surface of representative county,-111.65054,31.89069,-111.78303,32.12852,18.2
+049,Remainder of Arizona,Remainder of State,04027,Yuma,point-on-surface of representative county,-113.94653,32.75763,-113.9109,32.77394,2.4
+050,Arkansas,Whole-State Zone,00005,(state centroid) Arkansas,state polygon centroid,-92.43906,34.89987,-92.44274,34.89387,0.5
+061,"Los Angeles-Long Beach, CA  CFS Area",CFS Metro Area,06111,Ventura,point-on-surface of representative county,-119.08615,34.48146,-119.13314,34.35874,8.9
+062,"Sacramento-Roseville, CA  CFS Area",CFS Metro Area,06067,Sacramento,point-on-surface of representative county,-121.27034,38.41483,-121.34044,38.45002,4.5
+063,"San Diego-Carlsbad, CA  CFS Area",CFS Metro Area,06073,San Diego,point-on-surface of representative county,-116.69874,33.04351,-116.77612,33.0236,4.7
+064,"San Jose-San Francisco-Oakland, CA  CFS Area",CFS Metro Area,06097,Sonoma,point-on-surface of representative county,-122.86796,38.493,-122.92611,38.52518,3.9
+065,"Fresno-Madera, CA  CFS Area",CFS Metro Area,06019,Fresno,point-on-surface of representative county,-119.63126,36.75723,-119.65502,36.76101,1.3
+069,Remainder of California,Remainder of State,06091,Sierra,point-on-surface of representative county,-120.51733,39.58916,-120.52199,39.57693,0.9
+081,"Denver-Aurora, CO  CFS Area",CFS Metro Area,08093,Park,point-on-surface of representative county,-105.78789,39.13338,-105.71765,39.11891,3.9
+089,Remainder of Colorado,Remainder of State,08109,Saguache,point-on-surface of representative county,-106.31549,38.05668,-106.23467,38.03165,4.7
+091,"Hartford-West Hartford-East Hartford, CT  CFS Area",CFS Metro Area,09007,Middlesex,point-on-surface of representative county,-72.52878,41.46791,-72.52278,41.433,2.4
+092,"New York-Newark, NY-NJ-CT-PA  CFS Area (CT Part)",CFS Metro Area,09009,New Haven,point-on-surface of representative county,-72.91872,41.40613,-72.9002,41.34972,4
+099,Remainder of Connecticut,Remainder of State,09011,New London,point-on-surface of representative county,-72.05456,41.4772,-72.10863,41.47265,2.8
+101,"Philadelphia-Reading-Camden, PA-NJ-DE-MD  CFS Area (DE Part)",CFS Metro Area,10003,New Castle,point-on-surface of representative county,-75.64919,39.55664,-75.64413,39.57592,1.4
+109,Remainder of Delaware,Remainder of State,10005,Sussex,point-on-surface of representative county,-75.39765,38.73975,-75.33702,38.67323,5.6
+111,"Washington-Arlington-Alexandria, DC-VA-MD-WV  CFS Area (DC Part)",CFS Metro Area,11001,District of Columbia,point-on-surface of representative county,-76.99942,38.89853,-77.01723,38.9041,1
+121,"Jacksonville-St. Marys-Palatka, FL-GA  CFS Area (FL Part)",CFS Metro Area,12109,St. Johns,point-on-surface of representative county,-81.44581,29.9356,-81.38395,29.89064,4.8
+122,"Miami-Fort Lauderdale-Port St. Lucie, FL  CFS Area",CFS Metro Area,12011,Broward,point-on-surface of representative county,-80.48738,26.17128,-80.47668,26.19354,1.7
+123,"Orlando-Deltona-Daytona Beach, FL  CFS Area",CFS Metro Area,12127,Volusia,point-on-surface of representative county,-81.14425,29.02453,-81.16179,29.05777,2.5
+124,"Tampa-St. Petersburg-Clearwater, FL  CFS Area",CFS Metro Area,12053,Hernando,point-on-surface of representative county,-82.41279,28.55843,-82.46623,28.57304,3.4
+129,Remainder of Florida,Remainder of State,12129,Wakulla,point-on-surface of representative county,-84.38216,30.20091,-84.37511,30.14036,4.2
+131,"Atlanta-Athens-Clarke County-Sandy Springs, GA  CFS Area",CFS Metro Area,13171,Lamar,point-on-surface of representative county,-84.14716,33.10898,-84.14672,33.07446,2.4
+132,"Savannah-Hinesville-Statesboro, GA  CFS Area",CFS Metro Area,13183,Long,point-on-surface of representative county,-81.80636,31.77739,-81.74287,31.74956,4.2
+139,Remainder of Georgia,Remainder of State,13189,McDuffie,point-on-surface of representative county,-82.47666,33.45259,-82.47873,33.47962,1.9
+151,"Urban Honolulu, HI  CFS Area",CFS Metro Area,15003,Honolulu,point-on-surface of representative county,-158.03398,21.47717,-158.20197,21.46137,10.9
+159,Remainder of Hawaii,Remainder of State,15005,Kalawao,point-on-surface of representative county,-156.94564,21.17215,-156.97401,21.21876,3.7
+160,Idaho,Whole-State Zone,00016,(state centroid) Idaho,state polygon centroid,-114.65936,44.38909,-114.61266,44.3505,3.5
+171,"Chicago-Naperville, IL-IN-WI  CFS Area (IL Part)",CFS Metro Area,17011,Bureau,point-on-surface of representative county,-89.51285,41.4471,-89.52838,41.4013,3.3
+172,"St. Louis-St. Charles-Farmington, MO-IL  CFS Area (IL Part)",CFS Metro Area,17005,Bond,point-on-surface of representative county,-89.4373,38.89585,-89.43659,38.88592,0.7
+179,Remainder of Illinois,Remainder of State,17067,Hancock,point-on-surface of representative county,-91.14198,40.42561,-91.16799,40.40579,1.9
+181,"Chicago-Naperville, IL-IN-WI  CFS Area (IN Part)",CFS Metro Area,18073,Jasper,point-on-surface of representative county,-87.1016,41.04237,-87.11881,41.01769,1.9
+182,"Indianapolis-Carmel-Muncie, IN  CFS Area",CFS Metro Area,18057,Hamilton,point-on-surface of representative county,-86.05169,40.0622,-86.02173,40.05365,1.7
+183,"Fort Wayne-Huntington-Auburn, IN  CFS Area",CFS Metro Area,18151,Steuben,point-on-surface of representative county,-85.0003,41.61311,-85.00241,41.64347,2.1
+189,Remainder of Indiana,Remainder of State,18115,Ohio,point-on-surface of representative county,-84.93338,38.979,-84.9643,38.94053,3.1
+190,Iowa,Whole-State Zone,00019,(state centroid) Iowa,state polygon centroid,-93.50007,42.07463,-93.49591,42.07515,0.2
+201,"Kansas City-Overland Park-Kansas City, MO-KS  CFS Area (KS Part)",CFS Metro Area,20043,Doniphan,point-on-surface of representative county,-95.10714,39.7967,-95.14723,39.7885,2.2
+202,"Wichita-Arkansas City-Winfield, KS  CFS Area",CFS Metro Area,20035,Cowley,point-on-surface of representative county,-96.83737,37.15086,-96.83725,37.23451,5.8
+209,Remainder of Kansas,Remainder of State,20073,Greenwood,point-on-surface of representative county,-96.24189,37.88725,-96.24173,37.87935,0.5
+211,"Cincinnati-Wilmington-Maysville, OH-KY-IN  CFS Area (KY Part)",CFS Metro Area,21077,Gallatin,point-on-surface of representative county,-84.89609,38.76187,-84.86215,38.7601,1.8
+212,"Louisville/Jefferson County-Elizabethtown-Madison, KY-IN  CFS Area (KY Part)",CFS Metro Area,21029,Bullitt,point-on-surface of representative county,-85.69907,37.96802,-85.70264,37.96993,0.2
+219,Remainder of Kentucky,Remainder of State,21053,Clinton,point-on-surface of representative county,-85.12428,36.75027,-85.1361,36.72726,1.7
+221,"Baton Rouge, LA  CFS Area",CFS Metro Area,22037,East Feliciana,point-on-surface of representative county,-91.05832,30.77201,-91.04343,30.83978,4.8
+222,"Lake Charles-Jennings, LA  CFS Area",CFS Metro Area,22019,Calcasieu,point-on-surface of representative county,-93.3694,30.26805,-93.35802,30.22956,2.7
+223,"New Orleans-Metairie-Hammond, LA-MS  CFS Area (LA Part)",CFS Metro Area,22105,Tangipahoa,point-on-surface of representative county,-90.40659,30.62302,-90.40663,30.62158,0.1
+229,Remainder of Louisiana,Remainder of State,22111,Union,point-on-surface of representative county,-92.39018,32.80636,-92.37565,32.82935,1.8
+230,Maine,Whole-State Zone,00023,(state centroid) Maine,state polygon centroid,-69.22289,45.35982,-69.23489,45.34736,1
+241,"Baltimore-Columbia-Towson, MD  CFS Area",CFS Metro Area,24510,Baltimore,point-on-surface of representative county,-76.62029,39.28747,-76.61048,39.30003,1
+242,"Washington-Arlington-Alexandria, DC-VA-MD-WV  CFS Area (MD Part)",CFS Metro Area,24009,Calvert,point-on-surface of representative county,-76.59624,38.53751,-76.52949,38.52261,3.8
+249,Remainder of Maryland,Remainder of State,24047,Worcester,point-on-surface of representative county,-75.36183,38.24955,-75.30993,38.22213,3.4
+251,"Boston-Worcester-Providence, MA-RI-NH-CT  CFS Area (MA Part)",CFS Metro Area,25025,Suffolk,point-on-surface of representative county,-71.07751,42.32572,-71.01825,42.33855,3.2
+259,Remainder of Massachusetts,Remainder of State,25015,Hampshire,point-on-surface of representative county,-72.71583,42.36988,-72.66369,42.33946,3.4
+261,"Detroit-Warren-Ann Arbor, MI  CFS Area",CFS Metro Area,26163,Wayne,point-on-surface of representative county,-83.32701,42.24674,-83.26195,42.28466,4.2
+262,"Grand Rapids-Wyoming-Muskegon, MI  CFS Area",CFS Metro Area,26139,Ottawa,point-on-surface of representative county,-86.00262,42.93592,-86.65495,42.94246,33
+269,Remainder of Michigan,Remainder of State,26109,Menominee,point-on-surface of representative county,-87.53131,45.5374,-87.49295,45.53824,1.9
+271,"Minneapolis-St. Paul, MN-WI  CFS Area (MN Part)",CFS Metro Area,27095,Mille Lacs,point-on-surface of representative county,-93.65178,45.90177,-93.633,45.92904,2.1
+279,Remainder of Minnesota,Remainder of State,27045,Fillmore,point-on-surface of representative county,-92.08964,43.66741,-92.09394,43.67919,0.8
+280,Mississippi,Whole-State Zone,00028,(state centroid) Mississippi,state polygon centroid,-89.66428,32.74882,-89.66674,32.73369,1.1
+291,"Kansas City-Overland Park-Kansas City, MO-KS  CFS Area (MO Part)",CFS Metro Area,29101,Johnson,point-on-surface of representative county,-93.81142,38.70094,-93.81186,38.74153,2.8
+292,"St. Louis-St. Charles-Farmington, MO-IL  CFS Area (MO Part)",CFS Metro Area,29071,Franklin,point-on-surface of representative county,-91.05262,38.44127,-91.07341,38.40831,2.5
+299,Remainder of Missouri,Remainder of State,29083,Henry,point-on-surface of representative county,-93.79478,38.33126,-93.79263,38.38649,3.8
+300,Montana,Whole-State Zone,00030,(state centroid) Montana,state polygon centroid,-109.64512,47.03349,-109.63303,47.05223,1.4
+311,"Omaha-Council Bluffs-Fremont, NE-IA  CFS Area (NE Part)",CFS Metro Area,31025,Cass,point-on-surface of representative county,-96.14603,40.91133,-96.14061,40.90988,0.3
+319,Remainder of Nebraska,Remainder of State,31039,Cuming,point-on-surface of representative county,-96.78736,41.87943,-96.78852,41.91587,2.5
+321,"Las Vegas-Henderson, NV-AZ  CFS Area (NV Part)",CFS Metro Area,32003,Clark,point-on-surface of representative county,-115.25472,35.92284,-115.01381,36.21426,24.2
+329,Remainder of Nevada,Remainder of State,32001,Churchill,point-on-surface of representative county,-118.32527,39.53203,-118.26417,39.53771,3.3
+331,"Boston-Worcester-Providence, MA-RI-NH-CT  CFS Area (NH Part)",CFS Metro Area,33013,Merrimack,point-on-surface of representative county,-71.67493,43.30377,-71.68004,43.29958,0.4
+339,Remainder of New Hampshire,Remainder of State,33009,Grafton,point-on-surface of representative county,-71.73959,43.97066,-71.84242,43.92644,6
+341,"New York-Newark, NY-NJ-CT-PA  CFS Area (NJ Part)",CFS Metro Area,34037,Sussex,point-on-surface of representative county,-74.69575,41.13305,-74.69191,41.13746,0.4
+342,"Philadelphia-Reading-Camden, PA-NJ-DE-MD  CFS Area (NJ Part)",CFS Metro Area,34007,Camden,point-on-surface of representative county,-75.0159,39.83851,-74.96125,39.80235,3.8
+350,New Mexico,Whole-State Zone,00035,(state centroid) New Mexico,state polygon centroid,-106.10838,34.42136,-106.11258,34.40711,1
+361,"Albany-Schenectady, NY  CFS Area",CFS Metro Area,36091,Saratoga,point-on-surface of representative county,-73.85283,43.13951,-73.85539,43.10614,2.3
+362,"Buffalo-Cheektowaga, NY  CFS Area",CFS Metro Area,36029,Erie,point-on-surface of representative county,-78.674,42.76329,-78.77819,42.75276,5.3
+363,"New York-Newark, NY-NJ-CT-PA  CFS Area (NY Part)",CFS Metro Area,36111,Ulster,point-on-surface of representative county,-74.22962,41.89437,-74.26546,41.94721,4.1
+364,"Rochester-Batavia-Seneca Falls, NY  CFS Area",CFS Metro Area,36069,Ontario,point-on-surface of representative county,-77.28973,42.81272,-77.3035,42.85636,3.1
+369,Remainder of New York,Remainder of State,36101,Steuben,point-on-surface of representative county,-77.41803,42.34122,-77.38553,42.26673,5.4
+371,"Charlotte-Concord, NC-SC  CFS Area  (NC Part)",CFS Metro Area,37109,Lincoln,point-on-surface of representative county,-81.21191,35.47316,-81.22689,35.48849,1.4
+372,"Greensboro-Winston-Salem-High Point, NC  CFS Area",CFS Metro Area,37001,Alamance,point-on-surface of representative county,-79.40003,36.07532,-79.40057,36.04395,2.2
+373,"Raleigh-Durham-Chapel Hill, NC  CFS Area",CFS Metro Area,37037,Chatham,point-on-surface of representative county,-79.25533,35.70003,-79.25145,35.70499,0.4
+379,Remainder of North Carolina,Remainder of State,37155,Robeson,point-on-surface of representative county,-79.14076,34.62532,-79.10088,34.63921,2.5
+380,North Dakota,Whole-State Zone,00038,(state centroid) North Dakota,state polygon centroid,-100.46931,47.4463,-100.46586,47.45014,0.3
+391,"Cincinnati-Wilmington-Maysville, OH-KY-IN  CFS Area (OH Part)",CFS Metro Area,39017,Butler,point-on-surface of representative county,-84.57823,39.45686,-84.56573,39.43975,1.4
+392,"Cleveland-Akron-Canton, OH  CFS Area",CFS Metro Area,39085,Lake,point-on-surface of representative county,-81.24199,41.71073,-81.39264,41.92412,16.7
+393,"Columbus-Marion-Zanesville, OH  CFS Area",CFS Metro Area,39047,Fayette,point-on-surface of representative county,-83.44604,39.54768,-83.46189,39.55525,1
+394,"Dayton-Springfield-Sidney, OH  CFS Area",CFS Metro Area,39021,Champaign,point-on-surface of representative county,-83.76351,40.14771,-83.7676,40.13278,1.1
+399,Remainder of Ohio,Remainder of State,39063,Hancock,point-on-surface of representative county,-83.65079,41.07933,-83.66603,41.00047,5.5
+401,"Oklahoma City-Shawnee, OK  CFS Area",CFS Metro Area,40017,Canadian,point-on-surface of representative county,-97.99118,35.47894,-97.97984,35.54341,4.5
+402,"Tulsa-Muskogee-Bartlesville, OK  CFS Area",CFS Metro Area,40101,Muskogee,point-on-surface of representative county,-95.42118,35.59557,-95.38391,35.61755,2.6
+409,Remainder of Oklahoma,Remainder of State,40001,Adair,point-on-surface of representative county,-94.65801,35.87808,-94.65103,35.89804,1.4
+411,"Portland-Vancouver-Salem, OR-WA  CFS Area (OR Part)",CFS Metro Area,41005,Clackamas,point-on-surface of representative county,-122.23186,45.20973,-122.19513,45.16049,3.8
+419,Remainder of Oregon,Remainder of State,41063,Wallowa,point-on-surface of representative county,-117.12394,45.54069,-117.18558,45.59375,4.7
+421,"Philadelphia-Reading-Camden, PA-NJ-DE-MD  CFS Area (PA Part)",CFS Metro Area,42101,Philadelphia,point-on-surface of representative county,-75.13487,40.00207,-75.13335,40.00938,0.5
+422,"Pittsburgh-New Castle-Weirton, PA-OH-WV  CFS Area (PA Part)",CFS Metro Area,42007,Beaver,point-on-surface of representative county,-80.33323,40.65655,-80.35072,40.68414,2.1
+423,"New York-Newark, NY-NJ-CT-PA  CFS Area (PA Part)",CFS Metro Area,42089,Monroe,point-on-surface of representative county,-75.29942,41.03992,-75.32907,41.05624,1.9
+429,Remainder of Pennsylvania,Remainder of State,42053,Forest,point-on-surface of representative county,-79.23473,41.54432,-79.24971,41.5133,2.3
+441,"Boston-Worcester-Providence, MA-RI-NH-CT  CFS Area (RI Part)",CFS Metro Area,44009,Washington,point-on-surface of representative county,-71.59805,41.50913,-71.6176,41.40098,7.5
+451,"Charleston-North Charleston, SC  CFS Area",CFS Metro Area,45035,Dorchester,point-on-surface of representative county,-80.42886,33.07931,-80.4047,33.08219,1.4
+452,"Greenville-Spartanburg-Anderson, SC  CFS Area",CFS Metro Area,45047,Greenwood,point-on-surface of representative county,-82.08834,34.17473,-82.12788,34.1558,2.6
+459,Remainder of South Carolina,Remainder of State,45023,Chester,point-on-surface of representative county,-81.1562,34.66472,-81.16125,34.68934,1.7
+460,South Dakota,Whole-State Zone,00046,(state centroid) South Dakota,state polygon centroid,-100.23045,44.43613,-100.22685,44.44438,0.6
+471,"Memphis-Forrest City, TN-MS-AR  CFS Area (TN Part)",CFS Metro Area,47157,Shelby,point-on-surface of representative county,-89.86644,35.22663,-89.8954,35.18379,3.4
+472,"Nashville-Davidson-Murfreesboro, TN  CFS Area",CFS Metro Area,47149,Rutherford,point-on-surface of representative county,-86.38814,35.85235,-86.41721,35.84337,1.7
+473,"Knoxville-Morristown-Sevierville, TN  CFS Area",CFS Metro Area,47129,Morgan,point-on-surface of representative county,-84.63259,36.11609,-84.63926,36.1387,1.6
+479,Remainder of Tennessee,Remainder of State,47065,Hamilton,point-on-surface of representative county,-85.1565,35.21744,-85.19771,35.16076,4.6
+481,"Austin-Round Rock, TX  CFS Area",CFS Metro Area,48055,Caldwell,point-on-surface of representative county,-97.60365,29.82206,-97.62814,29.8324,1.6
+482,"Beaumont-Port Arthur, TX  CFS Area",CFS Metro Area,48361,Orange,point-on-surface of representative county,-93.89042,30.06899,-93.8941,30.12232,3.7
+483,"Corpus Christi-Kingsville-Alice, TX  CFS Area",CFS Metro Area,48007,Aransas,point-on-surface of representative county,-97.02101,28.08919,-96.97798,28.10423,2.8
+484,"Dallas-Fort Worth, TX-OK  CFS Area (TX Part)",CFS Metro Area,48147,Fannin,point-on-surface of representative county,-96.11934,33.57797,-96.10499,33.59116,1.2
+485,"El Paso-Las Cruces, TX-NM  CFS Area (TX Part)",CFS Metro Area,48229,Hudspeth,point-on-surface of representative county,-105.40912,31.30368,-105.37755,31.45087,10.3
+486,"Houston-The Woodlands, TX  CFS Area",CFS Metro Area,48157,Fort Bend,point-on-surface of representative county,-95.74256,29.53623,-95.77101,29.5266,1.8
+487,"Laredo, TX   CFS Area",CFS Metro Area,48479,Webb,point-on-surface of representative county,-99.29054,27.72942,-99.34075,27.7608,3.8
+488,"San Antonio-New Braunfels, TX  CFS Area",CFS Metro Area,48019,Bandera,point-on-surface of representative county,-99.22561,29.75078,-99.24828,29.75639,1.4
+489,Remainder of Texas,Remainder of State,48327,Menard,point-on-surface of representative county,-99.80012,30.82569,-99.85396,30.88439,5.2
+491,"Salt Lake City-Provo-Orem, UT  CFS Area",CFS Metro Area,49011,Davis,point-on-surface of representative county,-112.10267,40.97595,-112.20194,41.03756,6.7
+499,Remainder of Utah,Remainder of State,49033,Rich,point-on-surface of representative county,-111.24294,41.57271,-111.24023,41.6276,3.8
+500,Vermont,Whole-State Zone,00050,(state centroid) Vermont,state polygon centroid,-72.66272,44.0752,-72.66615,44.06923,0.4
+511,"Richmond, VA  CFS Area",CFS Metro Area,51085,Hanover,point-on-surface of representative county,-77.55393,37.75332,-77.49132,37.76021,3.5
+512,"Virginia Beach-Norfolk, VA-NC  CFS Area (VA Part)",CFS Metro Area,51735,Poquoson,point-on-surface of representative county,-76.36335,37.14715,-76.30353,37.12836,3.5
+513,"Washington-Arlington-Alexandria, DC-VA-MD-WV  CFS Area (VA Part)",CFS Metro Area,51179,Stafford,point-on-surface of representative county,-77.4776,38.4384,-77.45488,38.4154,2
+519,Remainder of Virginia,Remainder of State,51775,Salem,point-on-surface of representative county,-80.06558,37.2765,-80.05524,37.28533,0.8
+531,"Seattle-Tacoma, WA  CFS Area",CFS Metro Area,53041,Lewis,point-on-surface of representative county,-122.38406,46.6227,-122.37744,46.58007,3
+532,"Portland-Vancouver-Salem, OR-WA  CFS Area (WA Part)",CFS Metro Area,53015,Cowlitz,point-on-surface of representative county,-122.61417,46.11932,-122.67846,46.19679,6.2
+539,Remainder of Washington,Remainder of State,53069,Wahkiakum,point-on-surface of representative county,-123.34321,46.26297,-123.42446,46.29464,4.5
+540,West Virginia,Whole-State Zone,00054,(state centroid) West Virginia,state polygon centroid,-80.61384,38.64253,-80.62382,38.64091,0.6
+551,"Milwaukee-Racine-Waukesha, WI  CFS Area",CFS Metro Area,55127,Walworth,point-on-surface of representative county,-88.54153,42.72265,-88.54173,42.66811,3.8
+559,Remainder of Wisconsin,Remainder of State,55111,Sauk,point-on-surface of representative county,-89.89601,43.46733,-89.94333,43.428,3.6
+560,Wyoming,Whole-State Zone,00056,(state centroid) Wyoming,state polygon centroid,-107.55148,42.99965,-107.55141,42.99573,0.3

@@ -1,0 +1,34 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & \multicolumn{4}{c}{Total Tons} & \multicolumn{4}{c}{Total Ton-Miles}\\
+   svi\_cat          & Low          & Low-Medium    & Medium-High   & High          & Low          & Low-Medium    & Medium-High     & High \\   
+   Model:            & (1)          & (2)           & (3)           & (4)           & (5)          & (6)           & (7)             & (8)\\  
+   \midrule
+   \emph{Variables}\\
+   Extreme Hot Days  & -6.760$^{*}$ & -0.8893       & -0.2814       & -0.8554$^{*}$ & -1.388$^{*}$ & -0.1932       & -0.1010         & -0.2046$^{*}$\\   
+                     & (3.441)      & (0.5648)      & (0.2140)      & (0.3669)      & (0.6990)     & (0.1065)      & (0.0586)        & (0.0840)\\   
+   Extreme Cold Days & -4.122       & -0.4818$^{*}$ & 0.0602        & -1.067        & -0.8202      & -0.0933$^{*}$ & -0.0067         & -0.2949\\   
+                     & (2.226)      & (0.2057)      & (0.0934)      & (0.7241)      & (0.4422)     & (0.0390)      & (0.0206)        & (0.2105)\\   
+   Heavy Precip Days & 23.76        & -0.7365       & -3.219$^{**}$ & -2.578$^{*}$  & 4.938        & -0.2380       & -0.5511$^{***}$ & -0.4608$^{*}$\\   
+                     & (33.03)      & (1.304)       & (1.019)       & (1.207)       & (6.543)      & (0.2400)      & (0.1545)        & (0.2204)\\   
+   High Wind Days    & 1.898        & -0.6509       & -1.000        & -4.587        & 0.3768       & -0.1218       & -0.1038         & -0.9195\\   
+                     & (4.673)      & (0.4446)      & (0.7284)      & (3.260)       & (0.9248)     & (0.0820)      & (0.1192)        & (0.5946)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit              & Yes          & Yes           & Yes           & Yes           & Yes          & Yes           & Yes             & Yes\\  
+   year              & Yes          & Yes           & Yes           & Yes           & Yes          & Yes           & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations      & 18,264       & 18,264        & 18,252        & 18,258        & 18,264       & 18,264        & 18,252          & 18,258\\  
+   R$^2$             & 0.99713      & 0.99677       & 0.99911       & 0.99663       & 0.99621      & 0.99641       & 0.99788         & 0.99283\\  
+   Within R$^2$      & 0.00434      & 0.00520       & 0.00523       & 0.00189       & 0.00528      & 0.00637       & 0.00319         & 0.00145\\  
+   \midrule \midrule
+   \multicolumn{9}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{9}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

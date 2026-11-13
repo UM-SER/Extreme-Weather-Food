@@ -1,0 +1,20 @@
+Heavy precip   n=60240 | avg var: match 'all' 0.142, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 2.333 ; correct 'all' mean = 1.794 ; corr(panel, all) = 0.915
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   587920  31.4    1266922  67.7   1266922   67.7
+Vcells 18584765 141.8  120689696 920.8 148774909 1135.1
+High wind      n=60240 | avg var: match 'all' 0.134, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 2.214 ; correct 'all' mean = 1.302 ; corr(panel, all) = 0.803
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   588020  31.5    1266922  67.7   1266922   67.7
+Vcells 18976656 144.8  117697227 898.0 148774909 1135.1
+Extreme hot    n=60240 | avg var: match 'all' 0.912, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 11.187 ; correct 'all' mean = 10.993 ; corr(panel, all) = 0.990
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   588999  31.5    1266922   67.7   1266922   67.7
+Vcells 18993865 145.0  144570024 1103.0 180712529 1378.8
+Extreme cold   n=60240 | avg var: match 'all' 0.912, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 14.995 ; correct 'all' mean = 14.882 ; corr(panel, all) = 0.997
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   589029  31.5    1266922   67.7   1266922   67.7
+Vcells 19005879 145.1  144579635 1103.1 180724543 1378.9

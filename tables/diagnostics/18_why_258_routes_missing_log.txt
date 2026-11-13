@@ -1,0 +1,8 @@
+Routes tested: 258 
+(1) Full road lines, original rule: within 258 of 258 
+(2) Simplified lines, original rule:
+   simplified_requested simplified_line_within     N
+                 <lgcl>                 <lgcl> <int>
+1:                 TRUE                  FALSE   256
+2:                 TRUE                   TRUE     2
+Run date: 2026-11-10 

@@ -1,0 +1,33 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & \multicolumn{4}{c}{Truck Tons} & \multicolumn{4}{c}{Truck Ton-Miles}\\
+   Model:               & (1)           & (2)           & (3)           & (4)           & (5)            & (6)            & (7)           & (8)\\  
+   \midrule
+   \emph{Variables}\\
+   avgHighTempFreq\_5c  & -1.439$^{*}$  & -5.148$^{*}$  & -0.0627$^{*}$ & -0.0007       & -0.3250$^{*}$  & -1.144$^{*}$   & -0.0398$^{*}$ & 0.0010\\   
+                        & (0.6490)      & (2.314)       & (0.0282)      & (0.0049)      & (0.1332)       & (0.4750)       & (0.0179)      & (0.0067)\\   
+   avgLowTempFreq\_5c   & -1.165$^{**}$ & -3.337$^{**}$ & -0.0089       & 0.0032        & -0.2439$^{**}$ & -0.7007$^{**}$ & -0.0042       & 0.0036\\   
+                        & (0.3569)      & (1.043)       & (0.0085)      & (0.0051)      & (0.0755)       & (0.2199)       & (0.0053)      & (0.0072)\\   
+   avgHighPrecFreq      & 0.4867        & -3.051        & -0.1804$^{*}$ & -0.0432$^{*}$ & 0.1113         & -0.4313        & -0.1407$^{*}$ & -0.0796$^{**}$\\   
+                        & (3.420)       & (7.022)       & (0.0766)      & (0.0205)      & (0.6779)       & (1.390)        & (0.0626)      & (0.0294)\\   
+   avgHighVsFreq        & -2.730$^{*}$  & -3.979        & 0.0022        & 0.0519$^{*}$  & -0.4523        & -0.7538        & -0.0079       & 0.0722$^{*}$\\   
+                        & (1.267)       & (3.233)       & (0.0606)      & (0.0225)      & (0.2387)       & (0.6288)       & (0.0391)      & (0.0299)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit                 & Yes           & Yes           & Yes           & Yes           & Yes            & Yes            & Yes           & Yes\\  
+   year                 & Yes           & Yes           & Yes           & Yes           & Yes            & Yes            & Yes           & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations         & 73,038        & 17,328        & 22,884        & 32,826        & 73,038         & 17,328         & 22,884        & 32,826\\  
+   R$^2$                & 0.99712       & 0.99709       & 0.99545       & 0.99873       & 0.99578        & 0.99574        & 0.99273       & 0.99896\\  
+   Within R$^2$         & 0.00120       & 0.00346       & 0.00117       & 0.00064       & 0.00135        & 0.00409        & 0.00085       & 0.00067\\  
+   \midrule \midrule
+   \multicolumn{9}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{9}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

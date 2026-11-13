@@ -1,0 +1,25 @@
+Part A: 11938 stored route lines
+  stored lines not entirely within: 0
+Part B: 432 routes to request
+  50 / 432
+  100 / 432
+  150 / 432
+  200 / 432
+  250 / 432
+  300 / 432
+  350 / 432
+  400 / 432
+
+Rule: road path within the contiguous U.S. (at most 1 mile outside)
+                                    source within_conus     N
+                                    <char>       <lgcl> <int>
+1:                        Alaska or Hawaii        FALSE     3
+2:                  requested again (OSRM)         TRUE   258
+3:                  requested again (OSRM)        FALSE   174
+4: stored (od_route_geometries_conus.gpkg)         TRUE 11938
+
+Outside miles among routes that fail the rule:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  185.2   236.1   609.4   497.1   661.5   765.4 
+
+Routes kept: 12196 of 12373 

@@ -1,0 +1,694 @@
+Full-geometry run Wed Nov 11 10:27:00 CST 2026
+===== R2_17_sample_route_geometries 10:27:00
+Saved 12173 route lines (12044 routed + 129 same-zone)
+===== R2_17_sample_route_geometries exit 0
+===== 04_route_weather_index 10:27:12
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Calculating County Weather Events...
+  1/4: Extreme Heat...
+          used (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  623264 33.3    1305362  69.8   1196222   63.9
+Vcells 1166350  8.9  107030572 816.6 133787902 1020.8
+  2/4: Extreme Cold...
+          used (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  623361 33.3    1305362  69.8   1196222   63.9
+Vcells 1234810  9.5  107116145 817.3 133895118 1021.6
+  3/4: High Precip...
+          used (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  624108 33.4    1305362  69.8   1196222   63.9
+Vcells 1274379  9.8  107812920 822.6 133895118 1021.6
+  4/4: High Wind...
+          used (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells  624132 33.4    1305362  69.8   1196222   63.9
+Vcells 1300179 10.0  107846917 822.9 133895118 1021.6
+Mapping to Routes (Weighted & Simple Average)...
+Merging Master Index...
+DONE! Master Index saved to: ./data/Weather/od_route_weather_exposure.rds
+Total valid rows: 74220
+Columns generated:
+ [1] "dms_orig_GEOID"        "dms_dest_GEOID"        "year"                 
+ [4] "distwHighTempFreq_3sd" "distwHighTempFreq_5c"  "avgHighTempFreq_3sd"  
+ [7] "avgHighTempFreq_5c"    "distwLowTempFreq_3sd"  "distwLowTempFreq_5c"  
+[10] "avgLowTempFreq_3sd"    "avgLowTempFreq_5c"     "distwHighPrecFreq"    
+[13] "avgHighPrecFreq"       "distwHighVsFreq"       "avgHighVsFreq"        
+===== 04_route_weather_index exit 0
+===== 05_route_svi_index 10:29:21
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:data.table':
+
+    between, first, last
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading and Preparing SVI Data...
+Calculating State Averages for Generic Routes...
+Mapping SVI to Routes...
+Warning: 4447 segments are missing SVI data. Filling with mean.
+Calculating Final Indices...
+DONE! Route SVI Index saved to: ./data/SVI/od_route_svi.rds
+   dms_orig_GEOID dms_dest_GEOID  distwSVI    avgSVI
+           <char>         <char>     <num>     <num>
+1:          00005          00005 0.6904000 0.6904000
+2:          00016          00016 0.4759091 0.4759091
+3:          00019          00019 0.2196970 0.2196970
+4:          00023          00023 0.3418750 0.3418750
+5:          00028          00028 0.8065854 0.8065854
+6:          00030          00030 0.3126786 0.3126786
+===== 05_route_svi_index exit 0
+===== 06_build_panel 10:29:22
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:dplyr':
+
+    between, first, last
+
+Processing FAF Data (Calculating Shares)...
+Calculating Truck Shares (Tons & Ton-Miles)...
+Filtering for valid truck routes...
+Merging Context Data...
+Finalizing Panel...
+All routes: 12373 routes, 74238 obs. Contiguous-U.S. sample: 12173 routes, 73038 obs.
+DONE! Panel saved to: ./data/panel_od_year_truck_sctg01_07.rds
+===== 06_build_panel exit 0
+===== R2_04_sctg_panel_regression 10:29:28
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading FAF5 CSV...
+Aggregating by SCTG...
+Rows after SCTG aggregation: 208032 
+SCTG distribution:
+
+    1     2     3     4     5     6     7 
+ 7206  8376 28296 24504 39288 39702 60660 
+Merging context data...
+Full SCTG panel rows (contiguous-U.S. routes): 205536 
+Raw ag rows (SCTG 1-4, route x year): 40734 
+Processed rows (SCTG 5-7, route x year): 69564 
+Panels saved.
+Running regressions...
+Saving tables...
+Done! Check tables/ for panels, TableR3, and TableS5.
+
+=== Key coefficients (Tons) ===
+--- Raw Ag (SCTG 1-4) ---
+avgHighTempFreq_3sd  avgLowTempFreq_3sd     avgHighPrecFreq       avgHighVsFreq 
+         -0.8125972          -1.8724463           1.1377863          -6.7626913 
+
+--- Processed Food (SCTG 5-7) ---
+avgHighTempFreq_3sd  avgLowTempFreq_3sd     avgHighPrecFreq       avgHighVsFreq 
+         0.07434910          0.02873922         -0.14868812          0.28227617 
+===== R2_04_sctg_panel_regression exit 0
+===== 07a_main_regression_tables 10:30:53
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading Data...
+Running 3SD Specifications...
+  -> Saving to: ./tables/main/results_3sd/dist_weighted
+  -> Saving to: ./tables/main/results_3sd/avg_weighted
+Running 5C Specifications...
+  -> Saving to: ./tables/main/results_5c/dist_weighted
+  -> Saving to: ./tables/main/results_5c/avg_weighted
+Generating Comparison Tables (Table 5)...
+Done! Check directory: ./tables/main
+===== 07a_main_regression_tables exit 0
+===== 07b_regression_coefficients 10:30:56
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading Data...
+Running 3SD Specifications...
+  -> Output: ./tables/main/results_3sd/dist_weighted
+     Running Volume Regressions (Distance)...
+     Running Share Regressions (Distance)...
+     Running SVI Heterogeneity...
+  -> Output: ./tables/main/results_3sd/avg_weighted
+     Running Volume Regressions (Distance)...
+     Running Share Regressions (Distance)...
+     Running SVI Heterogeneity...
+Running 5C Specifications...
+  -> Output: ./tables/main/results_5c/dist_weighted
+     Running Volume Regressions (Distance)...
+     Running Share Regressions (Distance)...
+     Running SVI Heterogeneity...
+  -> Output: ./tables/main/results_5c/avg_weighted
+     Running Volume Regressions (Distance)...
+     Running Share Regressions (Distance)...
+     Running SVI Heterogeneity...
+Done.
+Running Magnitude Comparison (3SD Avg)...
+  -> Calculating Magnitudes in: ./tables/main/results_3sd/avg_weighted
+     Table 5 Saved.
+Done.
+===== 07b_regression_coefficients exit 0
+===== 08_main_figures 10:31:01
+Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Generating Figure 1 (Using Avg Weighted Vars)...
+Figure 1 map: 12173 routes
+Generating Figure 2...
+Generating Figures 4-5 from coefficient files...
+Generating Figure S5 (Using Avg Vars)...
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+Warning message:
+In geom_text(aes(label = sprintf("%.2f", .data[[y_var]]), vjust = .data[[vjust_var]]),  :
+  Ignoring unknown parameters: `stroke`
+DONE! Figures 1-5 and S5-S7 generated.
+===== 08_main_figures exit 0
+===== 09_supplementary_maps 10:31:40
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'data.table'
+
+The following objects are masked from 'package:dplyr':
+
+    between, first, last
+
+Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
+Loading routes from GPKG...
+           dist_cat n_routes
+1   Long (Band 6-8)     5471
+2 Medium (Band 4-5)     3814
+3  Short (Band 1-3)     2888
+Total Unique Routes: 12173
+>>> Plotting FigureS2_Short (n=2888)
+>>> Plotting FigureS3_Medium (n=3814)
+>>> Plotting FigureS4_Long (n=5471)
+DONE! Supplementary Figures S2-S4 generated (using Avg-Weighted variables).
+===== 09_supplementary_maps exit 0
+===== R2_02_regression_origin_dest_fe 10:31:51
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading panel data...
+Panel dimensions: 73038 rows x 32 cols
+After removing AK/HI: 73038 rows
+Running regressions (Tons)...
+Running regressions (Ton-Miles)...
+Saving tables...
+Done! Results saved to: ./tables
+Files: TableR1_OD_FE_tons.txt, TableR2_OD_FE_tmiles.txt
+===== R2_02_regression_origin_dest_fe exit 0
+===== R2_03_faf_zone_map 10:31:52
+Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+FAF zones: 129 
+Standard GEOID zones: 117 
+Whole-state zones:    12 
+CFS zones matched: 117 
+Whole-state zones in contiguous US: 12 
+Total zones in map: 129 (expect 129 = 132 minus Alaska and the two Hawaii zones, which have no route in the sample)
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Warning message:
+attribute variables are assumed to be spatially constant throughout all geometries 
+Saved: Figure_FAF_Zones.png
+
+=== Map summary ===
+Zones plotted (contiguous US):   129 
+Zone type breakdown:
+
+    CFS Metro Area Remainder of State   Whole-State Zone 
+                83                 34                 12 
+
+All done.
+===== R2_03_faf_zone_map exit 0
+===== R2_05_summary_statistics 10:32:08
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Full sample N:   73038 
+SCTG 1-4 N:      40734 
+SCTG 5-7 N:      69564 
+
+=== Summary Statistics ===
+# A tibble: 21 × 4
+   Sample      Variable              Mean      SD
+   <chr>       <chr>                <dbl>   <dbl>
+ 1 Full sample total_tons          226.   3072.  
+ 2 Full sample total_tmiles         50.9   508.  
+ 3 Full sample avgHighTempFreq_3sd  11.3     8.3 
+ 4 Full sample avgLowTempFreq_3sd   15.2     7.59
+ 5 Full sample avgHighPrecFreq       2.3     1.07
+ 6 Full sample avgHighVsFreq         2.24    1.15
+ 7 SCTG 1-4    total_tons          290.   3724.  
+ 8 SCTG 1-4    total_tmiles         58.1   633.  
+ 9 SCTG 1-4    avgHighTempFreq_3sd  11.9     9.18
+10 SCTG 1-4    avgLowTempFreq_3sd   15.1     7.61
+11 SCTG 1-4    avgHighPrecFreq       2.24    1.12
+12 SCTG 1-4    avgHighVsFreq         2.19    1.26
+13 SCTG 5-7    total_tons           67.3   511.  
+14 SCTG 5-7    total_tmiles         19.5    65.0 
+15 SCTG 5-7    avgHighTempFreq_3sd  11.3     8.35
+16 SCTG 5-7    avgLowTempFreq_3sd   15.1     7.6 
+17 SCTG 5-7    avgHighPrecFreq       2.31    1.07
+18 SCTG 5-7    avgHighVsFreq         2.24    1.16
+19 Full sample avgSVI                0.49    0.15
+20 SCTG 1-4    avgSVI                0.49    0.16
+21 SCTG 5-7    avgSVI                0.49    0.15
+Saved: TableS2_summary_stats.csv
+===== R2_05_summary_statistics exit 0
+===== R2_06_reproducibility_checks 10:32:09
+
+=== A. SAMPLE SIZE ===
+                                              object routes   obs
+1                              Regression panel, raw  12373 74238
+2                      Regression panel, excl. AK/HI  12373 74238
+3  Route-county table (od_route_county_segments.csv)  12372    NA
+4 Map geometry file (od_route_geometries_conus.gpkg)  11938    NA
+Years per route (excl. AK/HI):
+
+    6 
+12373 
+Rows per year:
+
+ 2018  2019  2020  2021  2022  2023 
+12373 12373 12373 12373 12373 12373 
+Panel routes absent from od_route_county_segments: 1 
+
+=== B. ROUTING ENDPOINTS ===
+Spherical geometry (s2) switched off
+Spherical geometry (s2) switched on
+Zones: 132  by method:
+
+point-on-surface of representative county 
+                                      119 
+                   state polygon centroid 
+                                       13 
+Zones with missing routing point: 0 
+Offset (miles) between routing point and CFS-area internal point, CFS Metro zones:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.100   1.600   2.650   3.967   4.125  33.000 
+
+=== C. ROUTE DISTANCE CHECKS ===
+# A tibble: 2 × 7
+  in_map_file routes median_ratio   p05   p95 share_ratio_below_1.02
+  <lgl>        <int>        <dbl> <dbl> <dbl>                  <dbl>
+1 FALSE          432         1.14 0.469  1.27                0.329  
+2 TRUE         11809         1.20 1.12   1.38                0.00178
+# ℹ 1 more variable: median_counties <dbl>
+Intra-zone routes (origin = destination zone): 132 
+Counties traversed per inter-zone route:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    2.0    25.0    41.0    44.8    62.0   133.0 
+Route distance (miles), inter-zone:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.97  557.90  931.98 1107.87 1507.78 3337.51 
+
+=== D. DISTANCE CLASSIFICATION ===
+# A tibble: 3 × 4
+  FAF_dist_cat `<500 mi` `500-1000 mi` `>1000 mi`
+  <chr>            <int>         <int>      <int>
+1 Long                10           232       5354
+2 Medium             209          3375        290
+3 Short             2392           379          0
+Share of inter-zone routes where FAF class = OSRM class: 0.909 
+Intra-zone routes by FAF class:
+
+Short 
+  132 
+
+=== E. ROBUSTNESS ===
+distw vars present: TRUE 
+                                                    model 1            model 2
+Dependent Var.:                                        Tons               Tons
+                                                                              
+Extreme hot days                          -0.3948* (0.1548)  -0.4257* (0.1746)
+Extreme cold days                        -1.143*** (0.3151) -1.207*** (0.3348)
+Heavy precipitation days                     0.4295 (3.560)     0.4540 (3.695)
+High wind days                             -4.291** (1.548)   -4.438** (1.594)
+Extreme hot days (dist-weighted)                                              
+Extreme cold days (dist-weighted)                                             
+Heavy precipitation days (dist-weighted)                                      
+High wind days (dist-weighted)                                                
+Fixed-Effects:                           ------------------ ------------------
+unit                                                    Yes                Yes
+year                                                    Yes                Yes
+________________________________________ __________________ __________________
+S.E.: Clustered                                    by: unit           by: unit
+Observations                                         74,238             71,628
+R2                                                  0.99712            0.99712
+Within R2                                           0.00069            0.00072
+
+                                                     model 3            model 4
+Dependent Var.:                                         Tons               Tons
+                                                                               
+Extreme hot days                           -0.1024* (0.0487)                   
+Extreme cold days                        -0.4146*** (0.0759)                   
+Heavy precipitation days                    -0.0568 (0.2872)                   
+High wind days                            -1.598*** (0.3360)                   
+Extreme hot days (dist-weighted)                             -0.4183** (0.1573)
+Extreme cold days (dist-weighted)                            -1.071*** (0.3095)
+Heavy precipitation days (dist-weighted)                         0.7425 (3.695)
+High wind days (dist-weighted)                                   -3.395 (1.781)
+Fixed-Effects:                           ------------------- ------------------
+unit                                                     Yes                Yes
+year                                                     Yes                Yes
+________________________________________ ___________________ __________________
+S.E.: Clustered                                     by: unit           by: unit
+Observations                                          73,446             74,238
+R2                                                   0.99664            0.99712
+Within R2                                            0.00182            0.00058
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+                                                     model 1
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                          -0.1090** (0.0381)
+Extreme cold days                        -0.2488*** (0.0693)
+Heavy precipitation days                     0.0784 (0.7080)
+High wind days                            -0.7843** (0.2977)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          74,238
+R2                                                   0.99578
+Within R2                                            0.00079
+
+                                                     model 2
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                          -0.1203** (0.0426)
+Extreme cold days                        -0.2664*** (0.0736)
+Heavy precipitation days                     0.0834 (0.7350)
+High wind days                            -0.8083** (0.3061)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          71,628
+R2                                                   0.99578
+Within R2                                            0.00084
+
+                                                     model 3
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                           -0.0315* (0.0159)
+Extreme cold days                        -0.0957*** (0.0194)
+Heavy precipitation days                    -0.0851 (0.0802)
+High wind days                           -0.3339*** (0.0887)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          73,446
+R2                                                   0.99620
+Within R2                                            0.00156
+
+                                                     model 4
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                                            
+Extreme cold days                                           
+Heavy precipitation days                                    
+High wind days                                              
+Extreme hot days (dist-weighted)          -0.1108** (0.0382)
+Extreme cold days (dist-weighted)        -0.2342*** (0.0685)
+Heavy precipitation days (dist-weighted)     0.1691 (0.7329)
+High wind days (dist-weighted)              -0.6514 (0.3511)
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          74,238
+R2                                                   0.99578
+Within R2                                            0.00072
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+
+=== F. OSRM PACKAGE DEFAULTS (installed version) ===
+osrm version: 4.2.0 
+osrm.server: https://routing.openstreetmap.de/ 
+osrm.profile: car 
+od_route_county_segments.csv last modified: 2025-10-11 22:34:07 
+od_route_geometries_conus.gpkg last modified: 2026-01-06 05:57:49 
+Done. Outputs in ./tables/diagnostics
+===== R2_06_reproducibility_checks exit 0
+===== R2_07_verify_weather_definitions 10:32:12
+Wind > 8 m/s                     n=1796  corr=0.7367  max|diff|=27.1667  share exact(<1e-6)=0.000
+Wind > 10 m/s                    n=1699  corr=1.0000  max|diff|=0.0000  share exact(<1e-6)=1.000
+          used (Mb) gc trigger  (Mb)  max used  (Mb)
+Ncells  650399 34.8    1434022  76.6    847779  45.3
+Vcells 7651141 58.4   84510127 644.8 105567923 805.5
+Precip > 50 mm                   n=1776  corr=1.0000  max|diff|=0.0000  share exact(<1e-6)=1.000
+          used (Mb) gc trigger  (Mb)  max used  (Mb)
+Ncells  650480 34.8    1434022  76.6    847779  45.3
+Vcells 7684432 58.7   84532821 645.0 105567923 805.5
+Hot: mean_JJA + 3*sd_JJA         n=1777  corr=0.9699  max|diff|=16.5833  share exact(<1e-6)=0.488
+
+Baseline sd_JJA (interannual SD of JJA mean tmax), deg C:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.4336  1.1405  1.3681  1.3930  1.6686  2.2384 
+Implied hot threshold above JJA mean (3*sd), deg C:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.301   3.421   4.104   4.179   5.006   6.715 
+===== R2_07_verify_weather_definitions exit 0
+===== R2_09_trace_sample_size 10:33:04
+Error: './data/FAF/FAF5.6.1_2018-2023.csv' does not exist in current working directory ('C:/Users/yhuad/project/weather_freight/git').
+Execution halted
+===== R2_09_trace_sample_size exit 1
+===== R2_11_check_route_mean_denominator 10:33:05
+Heavy precip   n=60240 | avg var: match 'all' 0.142, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 2.333 ; correct 'all' mean = 1.794 ; corr(panel, all) = 0.915
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   587920  31.4    1266922  67.7   1266922   67.7
+Vcells 18584765 141.8  120689696 920.8 148774909 1135.1
+High wind      n=60240 | avg var: match 'all' 0.134, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 2.214 ; correct 'all' mean = 1.302 ; corr(panel, all) = 0.803
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   588020  31.5    1266922  67.7   1266922   67.7
+Vcells 18976656 144.8  117697227 898.0 148774909 1135.1
+Extreme hot    n=60240 | avg var: match 'all' 0.912, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 11.187 ; correct 'all' mean = 10.993 ; corr(panel, all) = 0.990
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   588999  31.5    1266922   67.7   1266922   67.7
+Vcells 18993865 145.0  144570024 1103.0 180712529 1378.8
+Extreme cold   n=60240 | avg var: match 'all' 0.912, match 'pos' 1.000 | distw var: match 1.000
+               mean of panel avg = 14.995 ; correct 'all' mean = 14.882 ; corr(panel, all) = 0.997
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   589029  31.5    1266922   67.7   1266922   67.7
+Vcells 19005879 145.1  144579635 1103.1 180724543 1378.9
+===== R2_11_check_route_mean_denominator exit 0
+===== R2_12_reestimate_corrected_precip_wind 10:35:28
+Routes in panel: 12173  with route-table rows: 12173 
+avgHighPrecFreq_all : route-county-years with no weather record: 0 
+avgHighVsFreq_all : route-county-years with no weather record: 0 
+Rows without a corrected value (kept at panel value): 0 
+Panel rows: 73038  missing corrected precip: 0  wind: 0 
+
+Means: precip panel 2.304 corrected 1.755 | wind panel 2.235 corrected 1.326 
+SD:    precip panel 1.071 corrected 1.195 | wind panel 1.149 corrected 1.167 
+                             Panel as built Corrected precip..
+Dependent Var.:                        Tons               Tons
+                                                              
+Extreme hot days          -0.3901* (0.1559)  -0.3922* (0.1583)
+Extreme cold days        -1.162*** (0.3190) -1.109*** (0.3204)
+Heavy precipitation days     0.4655 (3.590)     0.8671 (3.712)
+High wind days             -4.462** (1.588)     -3.908 (2.068)
+Fixed-Effects:           ------------------ ------------------
+unit                                    Yes                Yes
+year                                    Yes                Yes
+________________________ __________________ __________________
+S.E.: Clustered                    by: unit           by: unit
+Observations                         73,038             73,038
+R2                                  0.99712            0.99712
+Within R2                           0.00071            0.00060
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+                              Panel as built Corrected precip ..
+Dependent Var.:                    Ton-miles           Ton-miles
+                                                                
+Extreme hot days          -0.1087** (0.0384)  -0.1066** (0.0382)
+Extreme cold days        -0.2527*** (0.0699) -0.2419*** (0.0707)
+Heavy precipitation days     0.0850 (0.7140)     0.1821 (0.7366)
+High wind days            -0.8155** (0.3052)    -0.7943 (0.4098)
+Fixed-Effects:           ------------------- -------------------
+unit                                     Yes                 Yes
+year                                     Yes                 Yes
+________________________ ___________________ ___________________
+S.E.: Clustered                     by: unit            by: unit
+Observations                          73,038              73,038
+R2                                   0.99578             0.99578
+Within R2                            0.00081             0.00074
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+===== R2_12_reestimate_corrected_precip_wind exit 0
+===== R2_15_supplementary_tables 10:36:37
+Saved TableS3_volume_by_distance
+Table S4: observations dropped in Model II: 0; routes: 
+Saved TableS4_origin_destination_year_FE
+===== R2_15_supplementary_tables exit 127
+===== R2_09_trace_sample_size (rerun) 10:36:56
+Step 0  FAF5.6.1 raw records: 2398402 
+        domestic zones in data: 132 
+Step 1  domestic (trade_type == 1): 522752 
+Step 2  SCTG 01-07: 49380  records; 13671 OD pairs (any mode)
+        of which truck records: 34672 ; 12373 OD pairs with any truck record
+        years in data: 2018, 2019, 2020, 2021, 2022, 2023 
+Step 3  OD x year (all modes summed): 82026  = 13671 OD x 6 years
+Step 4  keep truck_tons > 0: 74238  rows; 12373 OD pairs
+        years per OD:
+
+    6 
+12373 
+Step 5  zone -> GEOID matched: 74238  rows; 12373 OD pairs
+        => panel_od_year_truck_sctg01_07_all_routes.rds has 74238 rows
+
+Step 6  routes touching Alaska (20) / Hawaii (151, 159):
+# A tibble: 3 × 3
+  dms_orig dms_dest years
+     <dbl>    <dbl> <int>
+1       20       20     6
+2      151      151     6
+3      159      159     6
+        rows removed: 18  -> remaining 74220 rows, 12370 OD pairs
+        (truck SCTG 01-07 records involving AK/HI in raw FAF: 3 OD pairs)
+===== R2_09_trace_sample_size exit 0
+===== R2_15_supplementary_tables (rerun) 10:36:59
+Saved TableS3_volume_by_distance
+Table S4: observations dropped in Model II: 0; routes: 
+Saved TableS4_origin_destination_year_FE
+Saved TableS5_by_food_product
+Saved TableS6_volume_by_svi
+Saved TableS7_truck_share_by_distance
+Saved TableS8_truck_share_by_svi
+Saved TableS10_route_construction_robustness
+Saved TableS11_faf_class_vs_osrm_length
+Done: ./tables/supplementary
+===== R2_15_supplementary_tables exit 0

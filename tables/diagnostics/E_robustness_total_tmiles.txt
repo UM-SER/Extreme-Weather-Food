@@ -1,0 +1,42 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{4}{c}{Ton-miles}\\
+   Sample / exposure                        & Baseline        & Mapped routes only & Excl. intra-zone routes & Distance-weighted exposure \\   
+   Model:                                   & (1)             & (2)                & (3)                     & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Extreme hot days                         & -0.1090$^{**}$  & -0.1203$^{**}$     & -0.0315$^{*}$           &   \\   
+                                            & (0.0381)        & (0.0426)           & (0.0159)                &   \\   
+   Extreme cold days                        & -0.2488$^{***}$ & -0.2664$^{***}$    & -0.0957$^{***}$         &   \\   
+                                            & (0.0693)        & (0.0736)           & (0.0194)                &   \\   
+   Heavy precipitation days                 & 0.0784          & 0.0834             & -0.0851                 &   \\   
+                                            & (0.7080)        & (0.7350)           & (0.0802)                &   \\   
+   High wind days                           & -0.7843$^{**}$  & -0.8083$^{**}$     & -0.3339$^{***}$         &   \\   
+                                            & (0.2977)        & (0.3061)           & (0.0887)                &   \\   
+   Extreme hot days (dist-weighted)         &                 &                    &                         & -0.1108$^{**}$\\   
+                                            &                 &                    &                         & (0.0382)\\   
+   Extreme cold days (dist-weighted)        &                 &                    &                         & -0.2342$^{***}$\\   
+                                            &                 &                    &                         & (0.0685)\\   
+   Heavy precipitation days (dist-weighted) &                 &                    &                         & 0.1691\\   
+                                            &                 &                    &                         & (0.7329)\\   
+   High wind days (dist-weighted)           &                 &                    &                         & -0.6514\\   
+                                            &                 &                    &                         & (0.3511)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit                                     & Yes             & Yes                & Yes                     & Yes\\  
+   year                                     & Yes             & Yes                & Yes                     & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                             & 74,238          & 71,628             & 73,446                  & 74,238\\  
+   R$^2$                                    & 0.99578         & 0.99578            & 0.99620                 & 0.99578\\  
+   Within R$^2$                             & 0.00079         & 0.00084            & 0.00156                 & 0.00072\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+
