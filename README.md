@@ -144,7 +144,6 @@ All intermediate files from steps 0–6 are included in the repository. Steps 7 
 | Table S1 | `tables/supplementary/TableS1_sctg_composition.csv` | `R2_01_faf_zone_route_count.R` | raw FAF CSV |
 | Table S2 | `tables/TableS2_summary_stats.csv` | `R2_05_summary_statistics.R` | main and SCTG panels |
 | Tables S3–S8 | `tables/supplementary/TableS3_*.csv` … `TableS8_*.csv`; all in `supplementary_tables.md` | `R2_15_supplementary_tables.R` | main and SCTG panels |
-| Tables S10–S11 (new) | `tables/supplementary/TableS10_route_construction_robustness.csv`, `TableS11_faf_class_vs_osrm_length.csv` | `R2_15_supplementary_tables.R` | main panel; route geometries |
 
 Tables S4 and S5 are also written in `fixest` format by `R2_02` (`tables/TableS4_OD_FE_*.txt`, with an extra column using both fixed effects) and `R2_04` (`tables/TableS5_SCTG_*.txt`). Table S9 (data sources) is text only.
 
