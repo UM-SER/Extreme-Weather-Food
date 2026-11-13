@@ -1,0 +1,188 @@
+
+=== A. SAMPLE SIZE ===
+                                              object routes   obs
+1                              Regression panel, raw  12373 74238
+2                      Regression panel, excl. AK/HI  12373 74238
+3  Route-county table (od_route_county_segments.csv)  12372    NA
+4 Map geometry file (od_route_geometries_conus.gpkg)  11938    NA
+Years per route (excl. AK/HI):
+
+    6 
+12373 
+Rows per year:
+
+ 2018  2019  2020  2021  2022  2023 
+12373 12373 12373 12373 12373 12373 
+Panel routes absent from od_route_county_segments: 1 
+
+=== B. ROUTING ENDPOINTS ===
+Zones: 132  by method:
+
+point-on-surface of representative county 
+                                      119 
+                   state polygon centroid 
+                                       13 
+Zones with missing routing point: 0 
+Offset (miles) between routing point and CFS-area internal point, CFS Metro zones:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.100   1.600   2.650   3.967   4.125  33.000 
+
+=== C. ROUTE DISTANCE CHECKS ===
+# A tibble: 2 × 7
+  in_map_file routes median_ratio   p05   p95 share_ratio_below_1.02
+  <lgl>        <int>        <dbl> <dbl> <dbl>                  <dbl>
+1 FALSE          432         1.09 0.512  1.20               0.373   
+2 TRUE         11809         1.14 1.07   1.31               0.000169
+# ℹ 1 more variable: median_counties <dbl>
+Intra-zone routes (origin = destination zone): 132 
+Counties traversed per inter-zone route:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    2.0    25.0    41.0    44.8    62.0   133.0 
+Route distance (miles), inter-zone:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  16.88  534.34  886.21 1050.35 1433.86 3175.66 
+
+=== D. DISTANCE CLASSIFICATION ===
+# A tibble: 3 × 4
+  FAF_dist_cat `<500 mi` `500-1000 mi` `>1000 mi`
+  <chr>            <int>         <int>      <int>
+1 Long                 6           468       5122
+2 Medium             300          3423        151
+3 Short             2489           282          0
+Share of inter-zone routes where FAF class = OSRM class: 0.901 
+Intra-zone routes by FAF class:
+
+Short 
+  132 
+
+=== E. ROBUSTNESS ===
+distw vars present: TRUE 
+                                                    model 1            model 2
+Dependent Var.:                                        Tons               Tons
+                                                                              
+Extreme hot days                          -0.3942* (0.1543)  -0.4243* (0.1743)
+Extreme cold days                        -1.145*** (0.3177) -1.209*** (0.3375)
+Heavy precipitation days                     0.3825 (3.587)     0.4051 (3.718)
+High wind days                             -4.341** (1.542)   -4.490** (1.587)
+Extreme hot days (dist-weighted)                                              
+Extreme cold days (dist-weighted)                                             
+Heavy precipitation days (dist-weighted)                                      
+High wind days (dist-weighted)                                                
+Fixed-Effects:                           ------------------ ------------------
+unit                                                    Yes                Yes
+year                                                    Yes                Yes
+________________________________________ __________________ __________________
+S.E.: Clustered                                    by: unit           by: unit
+Observations                                         74,238             71,628
+R2                                                  0.99712            0.99712
+Within R2                                           0.00070            0.00072
+
+                                                     model 3            model 4
+Dependent Var.:                                         Tons               Tons
+                                                                               
+Extreme hot days                           -0.1012* (0.0485)                   
+Extreme cold days                        -0.4163*** (0.0764)                   
+Heavy precipitation days                    -0.0862 (0.2890)                   
+High wind days                            -1.682*** (0.3521)                   
+Extreme hot days (dist-weighted)                             -0.4141** (0.1566)
+Extreme cold days (dist-weighted)                            -1.064*** (0.3084)
+Heavy precipitation days (dist-weighted)                         0.6966 (3.680)
+High wind days (dist-weighted)                                   -3.447 (1.781)
+Fixed-Effects:                           ------------------- ------------------
+unit                                                     Yes                Yes
+year                                                     Yes                Yes
+________________________________________ ___________________ __________________
+S.E.: Clustered                                     by: unit           by: unit
+Observations                                          73,446             74,238
+R2                                                   0.99664            0.99712
+Within R2                                            0.00190            0.00058
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+                                                     model 1
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                          -0.1089** (0.0380)
+Extreme cold days                        -0.2496*** (0.0697)
+Heavy precipitation days                     0.0682 (0.7133)
+High wind days                            -0.8016** (0.2970)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          74,238
+R2                                                   0.99578
+Within R2                                            0.00080
+
+                                                     model 2
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                          -0.1200** (0.0426)
+Extreme cold days                        -0.2670*** (0.0740)
+Heavy precipitation days                     0.0725 (0.7396)
+High wind days                            -0.8258** (0.3051)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          71,628
+R2                                                   0.99578
+Within R2                                            0.00085
+
+                                                     model 3
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                           -0.0313* (0.0158)
+Extreme cold days                        -0.0962*** (0.0196)
+Heavy precipitation days                    -0.0948 (0.0820)
+High wind days                           -0.3574*** (0.0922)
+Extreme hot days (dist-weighted)                            
+Extreme cold days (dist-weighted)                           
+Heavy precipitation days (dist-weighted)                    
+High wind days (dist-weighted)                              
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          73,446
+R2                                                   0.99620
+Within R2                                            0.00166
+
+                                                     model 4
+Dependent Var.:                                    Ton-miles
+                                                            
+Extreme hot days                                            
+Extreme cold days                                           
+Heavy precipitation days                                    
+High wind days                                              
+Extreme hot days (dist-weighted)          -0.1097** (0.0380)
+Extreme cold days (dist-weighted)        -0.2327*** (0.0683)
+Heavy precipitation days (dist-weighted)     0.1603 (0.7297)
+High wind days (dist-weighted)              -0.6672 (0.3528)
+Fixed-Effects:                           -------------------
+unit                                                     Yes
+year                                                     Yes
+________________________________________ ___________________
+S.E.: Clustered                                     by: unit
+Observations                                          74,238
+R2                                                   0.99578
+Within R2                                            0.00072
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+
+=== F. OSRM PACKAGE DEFAULTS (installed version) ===
+osrm version: 4.2.0 
+osrm.server: https://routing.openstreetmap.de/ 
+osrm.profile: car 
+od_route_county_segments.csv last modified: 2025-10-11 22:34:07 
+od_route_geometries_conus.gpkg last modified: 2026-01-06 05:57:49 

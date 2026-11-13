@@ -1,0 +1,34 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{4}{c}{Share (TMiles) \%}\\
+   svi\_cat                & Low          & Low-Medium   & Medium-High            & High \\   
+   Model:                  & (1)          & (2)          & (3)                    & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   distwHighTempFreq\_3sd  & -0.0003      & 0.0014       & 0.0026$^{*}$           & 0.0003\\   
+                           & (0.0009)     & (0.0009)     & (0.0010)               & (0.0004)\\   
+   distwLowTempFreq\_3sd   & -0.0005      & 0.0018       & $-6.73\times 10^{-5}$  & 0.0008\\   
+                           & (0.0014)     & (0.0011)     & (0.0016)               & (0.0006)\\   
+   distwHighPrecFreq       & 0.0027       & 0.0018       & 0.0010                 & 0.0032\\   
+                           & (0.0050)     & (0.0056)     & (0.0031)               & (0.0022)\\   
+   distwHighVsFreq         & 0.0092$^{*}$ & 0.0065$^{*}$ & 0.0154$^{***}$         & 0.0058\\   
+                           & (0.0042)     & (0.0029)     & (0.0045)               & (0.0056)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit                    & Yes          & Yes          & Yes                    & Yes\\  
+   year                    & Yes          & Yes          & Yes                    & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations            & 18,570       & 18,558       & 18,552                 & 18,558\\  
+   R$^2$                   & 0.99984      & 0.99987      & 0.99984                & 0.99986\\  
+   Within R$^2$            & 0.00031      & 0.00065      & 0.00167                & 0.00031\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

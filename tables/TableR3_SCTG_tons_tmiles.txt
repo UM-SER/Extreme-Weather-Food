@@ -1,0 +1,35 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & Total Tons     & Total Ton-Miles & Total Tons     & Total Ton-Miles\\  
+   Commodity Group & \multicolumn{2}{c}{Raw Ag (SCTG 1-4)} & \multicolumn{2}{c}{Processed (SCTG 5-7)} \\ 
+   Outcome              & Tons           & Ton-Miles       & Tons           & Ton-Miles \\   
+   Model:               & (1)            & (2)             & (3)            & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Extreme Hot Days     & -0.8152$^{**}$ & -0.2063$^{**}$  & 0.0741$^{*}$   & 0.0135$^{**}$\\   
+                        & (0.2591)       & (0.0639)        & (0.0358)       & (0.0048)\\   
+   Extreme Cold Days    & -1.855$^{***}$ & -0.4073$^{***}$ & 0.0285         & 0.0063\\   
+                        & (0.5056)       & (0.1127)        & (0.0282)       & (0.0036)\\   
+   Heavy Precip Days    & 1.030          & 0.1882          & -0.1518        & -0.0190\\   
+                        & (5.585)        & (1.110)         & (0.1757)       & (0.0146)\\   
+   High Wind Days       & -6.657$^{**}$  & -1.243$^{**}$   & 0.2715$^{***}$ & 0.0709$^{***}$\\   
+                        & (2.348)        & (0.4528)        & (0.0815)       & (0.0084)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit                 & Yes            & Yes             & Yes            & Yes\\  
+   year                 & Yes            & Yes             & Yes            & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations         & 41,274         & 41,274          & 70,710         & 70,710\\  
+   R$^2$                & 0.99650        & 0.99513         & 0.99956        & 0.99952\\  
+   Within R$^2$         & 0.00127        & 0.00146         & 0.00146        & 0.00319\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

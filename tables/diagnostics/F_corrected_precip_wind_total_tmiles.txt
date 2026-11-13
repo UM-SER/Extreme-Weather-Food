@@ -1,0 +1,33 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{2}{c}{Ton-miles}\\
+   Model:                   & (1)             & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   Extreme hot days         & -0.1089$^{**}$  & -0.1072$^{**}$\\   
+                            & (0.0380)        & (0.0378)\\   
+   Extreme cold days        & -0.2496$^{***}$ & -0.2389$^{***}$\\   
+                            & (0.0697)        & (0.0704)\\   
+   Heavy precipitation days & 0.0682          & 0.1695\\   
+                            & (0.7133)        & (0.7318)\\   
+   High wind days           & -0.8016$^{**}$  & -0.7674\\   
+                            & (0.2970)        & (0.4008)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit                     & Yes             & Yes\\  
+   year                     & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations             & 74,238          & 74,238\\  
+   R$^2$                    & 0.99578         & 0.99578\\  
+   Within R$^2$             & 0.00080         & 0.00073\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

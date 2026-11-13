@@ -1,0 +1,36 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{4}{c}{Total Ton-Miles}\\
+   Fixed Effects     & \makecell{Baseline\\(Route+Year)}    & +Origin×Year   & +Dest×Year      & +Both \\   
+   Model:            & (1)                                  & (2)            & (3)             & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Extreme Hot Days  & -0.1089$^{**}$                       & -0.1007$^{*}$  & -0.0981$^{*}$   & -0.0958\\   
+                     & (0.0380)                             & (0.0409)       & (0.0408)        & (0.0685)\\   
+   Extreme Cold Days & -0.2496$^{***}$                      & -0.1625$^{**}$ & -0.1964$^{***}$ & 0.0551\\   
+                     & (0.0697)                             & (0.0596)       & (0.0577)        & (0.0804)\\   
+   Heavy Precip Days & 0.0682                               & 0.3347         & 0.2968          & 0.7688\\   
+                     & (0.7133)                             & (0.8703)       & (0.8682)        & (1.154)\\   
+   High Wind Days    & -0.8016$^{**}$                       & -0.8489$^{**}$ & -0.8512$^{**}$  & -0.9304$^{*}$\\   
+                     & (0.2970)                             & (0.3137)       & (0.3069)        & (0.3815)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   unit              & Yes                                  & Yes            & Yes             & Yes\\  
+   year              & Yes                                  &                &                 & \\  
+   dms\_orig-year    &                                      & Yes            &                 & Yes\\  
+   dms\_dest-year    &                                      &                & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations      & 74,238                               & 74,220         & 74,220          & 74,220\\  
+   R$^2$             & 0.99578                              & 0.99585        & 0.99584         & 0.99590\\  
+   Within R$^2$      & 0.00080                              & 0.00043        & 0.00046         & 0.00031\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (unit) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.001, **: 0.01, *: 0.05}}\\
+\end{tabular}
+\par\endgroup
+
+

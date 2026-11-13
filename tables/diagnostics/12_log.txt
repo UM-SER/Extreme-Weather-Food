@@ -1,0 +1,42 @@
+Routes in panel: 12373  with route-table rows: 12372 
+avgHighPrecFreq_all : route-county-years with no weather record: 0 
+avgHighVsFreq_all : route-county-years with no weather record: 0 
+Rows without a corrected value (kept at panel value): 6 
+Panel rows: 74238  missing corrected precip: 0  wind: 0 
+
+Means: precip panel 2.29 corrected 1.737 | wind panel 2.25 corrected 1.345 
+SD:    precip panel 1.067 corrected 1.193 | wind panel 1.155 corrected 1.178 
+                             Panel as built Corrected precip..
+Dependent Var.:                        Tons               Tons
+                                                              
+Extreme hot days          -0.3942* (0.1543)  -0.3980* (0.1567)
+Extreme cold days        -1.145*** (0.3177) -1.093*** (0.3181)
+Heavy precipitation days     0.3825 (3.587)     0.7909 (3.688)
+High wind days             -4.341** (1.542)     -3.750 (2.019)
+Fixed-Effects:           ------------------ ------------------
+unit                                    Yes                Yes
+year                                    Yes                Yes
+________________________ __________________ __________________
+S.E.: Clustered                    by: unit           by: unit
+Observations                         74,238             74,238
+R2                                  0.99712            0.99712
+Within R2                           0.00070            0.00058
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1
+                              Panel as built Corrected precip ..
+Dependent Var.:                    Ton-miles           Ton-miles
+                                                                
+Extreme hot days          -0.1089** (0.0380)  -0.1072** (0.0378)
+Extreme cold days        -0.2496*** (0.0697) -0.2389*** (0.0704)
+Heavy precipitation days     0.0682 (0.7133)     0.1695 (0.7318)
+High wind days            -0.8016** (0.2970)    -0.7674 (0.4008)
+Fixed-Effects:           ------------------- -------------------
+unit                                     Yes                 Yes
+year                                     Yes                 Yes
+________________________ ___________________ ___________________
+S.E.: Clustered                     by: unit            by: unit
+Observations                          74,238              74,238
+R2                                   0.99578             0.99578
+Within R2                            0.00080             0.00073
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 ' ' 1

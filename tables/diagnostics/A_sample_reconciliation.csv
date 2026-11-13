@@ -1,0 +1,5 @@
+object,routes,obs
+"Regression panel, raw",12373,74238
+"Regression panel, excl. AK/HI",12373,74238
+Route-county table (od_route_county_segments.csv),12372,
+Map geometry file (od_route_geometries_conus.gpkg),11938,
