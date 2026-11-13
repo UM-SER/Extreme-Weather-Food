@@ -26,7 +26,7 @@ This repository contains the replication code and data for the manuscript *"Asso
 - **Not included:** the data file itself (about 555 MB). To rebuild the panels, download it and save it as `data/FAF/FAF5.6.1_2018-2023.csv`.
 - **Included:** `FAF5_metadata.xlsx`, the zone and code definitions.
 - **Processing:** we keep domestic flows (`trade_type == 1`) of SCTG 01–07 carried by truck (`dms_mode == 1`), sum them to origin zone × destination zone × year, and keep zone pairs with positive truck tons.
-- **Distance groups:** each route gets one time-invariant FAF distance band, taken from the truck records. When truck records for a pair report more than one band, we use the band that carries the most truck tons over 2018–2023; ties go to the longer band. Bands 1–3 are short (< 500 miles), 4–5 medium (500–999 miles), and 6–8 long (≥ 1,000 miles). This gives 17,418 / 23,244 / 33,576 route-years. All distance-group results (Figures 2 and 4, Figures S2–S4 and S6, and the distance tables) use this definition.
+- **Distance groups:** each route gets one time-invariant FAF distance band, taken from the truck records. When truck records for a pair report more than one band, we use the band that carries the most truck tons over 2018–2023; ties go to the longer band. Bands 1–3 are short (< 500 miles), 4–5 medium (500–999 miles), and 6–8 long (≥ 1,000 miles). In the sample this gives 17,328 / 22,884 / 32,826 route-years (2,888 / 3,814 / 5,471 routes). All distance-group results (Figures 2 and 4, Figures S2–S4 and S6, and the distance tables) use this definition.
 
 ### Shapefile (`data/Shapefile/`)
 
@@ -45,8 +45,14 @@ All files are from the U.S. Census Bureau:
 |---|---|---|
 | `faf_zone_lookup.rds` / `.csv` | FAF zone → representative county (or state) GEOID | `01_build_location_lookup.R` |
 | `faf_zone_routing_points.csv` | Coordinates used to route each of the 132 zones. CFS metro and remainder-of-state zones: point-on-surface of the representative county. Whole-state zones: state centroid. | `R2_06_reproducibility_checks.R` |
-| `od_route_county_segments.csv` | One row per route × county traversed, with the miles driven in each county (`distance`) and the route length (`total_distance`) | `archive_route_generation_original_2025-10-11.R`; cleaned version in `02_generate_route_table.R` |
-| `od_route_geometries_conus.gpkg` | Route lines used for maps; only routes that lie entirely within the contiguous U.S. (11,938 routes) | original working scripts |
+| `od_route_county_segments_fullgeom.csv` | **Used by steps 4–6.** One row per route × county traversed, with the miles driven in each county (`distance`) and the route length (`total_distance`), measured on the FULL OSRM road line. Same-zone and Alaska/Hawaii routes (not routed) keep their rows from `od_route_county_segments.csv` | `R2_19_full_geometry_check.R`, `R2_20_build_fullgeom_route_files.R` |
+| `route_conus_check_fullgeom.csv` | **The sample rule.** One row per panel route (12,373): road miles, miles outside the contiguous U.S. on the full road line, source, and `within_conus` (TRUE for the 12,173 sample routes) | `R2_20_build_fullgeom_route_files.R` |
+| `full_geometry/` | Raw output of `R2_19` (per-route results; the `_progress/` checkpoints are not included) | `R2_19_full_geometry_check.R` |
+| `od_route_county_segments.csv` | Earlier route table on OSRM's simplified route line (used in the submitted version; kept for the diagnostics) | `archive_route_generation_original_2025-10-11.R`; cleaned version in `02_generate_route_table.R` |
+| `od_route_geometries_conus.gpkg` | Route lines from the original route script; only routes that lie entirely within the contiguous U.S. (11,938 routes) | original working scripts |
+| `route_conus_check.csv` | Interim check (2026-11-08) on the stored simplified lines plus 432 re-requested routes (12,196 routes passed); superseded by `route_conus_check_fullgeom.csv` | `R2_16_check_routes_within_conus.R` |
+| `od_route_geometries_rerouted.gpkg` | Route lines requested again from OSRM for the 432 routes without a line in `od_route_geometries_conus.gpkg` | `R2_16_check_routes_within_conus.R` (interim; not included in the repository, 127 MB; needed only to rerun `R2_18`) |
+| `od_route_geometries_sample.gpkg` | Full road lines of the 12,173 sample routes (simplified to 200 m for mapping; the 129 same-zone routes are zero-length lines at the zone's routing point); used by all maps | `R2_17_sample_route_geometries.R` |
 
 **How routes were generated:** Open Source Routing Machine (OSRM), called through `osrm::osrmRoute()` with the package defaults:
 - server: `https://routing.openstreetmap.de/`;
@@ -89,9 +95,10 @@ Extreme-weather definitions:
 
 | File | Content | Produced by |
 |---|---|---|
-| `panel_od_year_truck_sctg01_07.rds` | Main panel: 12,373 routes × 6 years (2018–2023) = 74,238 observations, balanced | `06_build_panel.R` |
-| `panel_od_year_truck_sctg01_04.rds` | Raw agricultural products (SCTG 01–04), route × year | `R2_04_sctg_panel_regression.R` |
-| `panel_od_year_truck_sctg05_07.rds` | Processed food (SCTG 05–07), route × year | `R2_04_sctg_panel_regression.R` |
+| `panel_od_year_truck_sctg01_07.rds` | Main panel: 12,173 routes × 6 years (2018–2023) = 73,038 observations, balanced. Only routes whose full road line lies within the contiguous U.S. (`within_conus` in `route_conus_check_fullgeom.csv`) | `06_build_panel.R` |
+| `panel_od_year_truck_sctg01_07_all_routes.rds` | The same panel before that restriction: 12,373 routes, 74,238 observations. The 200 extra routes start or end in Alaska or Hawaii (3) or run through Canada (197; 185–765 road miles outside the contiguous U.S.; their route length and exposure cover only the U.S. part). Used only for Table S10, column 2, and the sample diagnostics (`R2_06`, `R2_09`, `R2_13`, `R2_14`) | `06_build_panel.R` |
+| `panel_od_year_truck_sctg01_04.rds` | Raw agricultural products (SCTG 01–04), route × year, same routes as the main panel | `R2_04_sctg_panel_regression.R` |
+| `panel_od_year_truck_sctg05_07.rds` | Processed food (SCTG 05–07), route × year, same routes as the main panel | `R2_04_sctg_panel_regression.R` |
 
 ## Code and run order
 
@@ -110,22 +117,28 @@ Extreme-weather definitions:
 | 8 | `08_main_figures.R` | — (run after 7b) | `figures/figure1/` to `figure5/`, `figures/supplementary/FigureS5–S7` |
 | 9 | `09_supplementary_maps.R` | — | `figures/supplementary/FigureS2–S4` |
 | R2 | `R2_02` … `R2_06`, `R2_11`, `R2_12` | — | `tables/`, `tables/diagnostics/`, `figures/supplementary/FigureS1_FAF_Zones.png` |
+| R2 | `R2_19_full_geometry_check.R` | internet access (OSRM; about 4 hours) | `data/Route/full_geometry/`; full route lines outside the repository (`FULL_LINES_DIR`) (run before step 4) |
+| R2 | `R2_20_build_fullgeom_route_files.R` | — | `data/Route/od_route_county_segments_fullgeom.csv`, `route_conus_check_fullgeom.csv` (run before step 4) |
+| R2 | `R2_16_check_routes_within_conus.R` | internet access (OSRM) | `data/Route/route_conus_check.csv`, `od_route_geometries_rerouted.gpkg` (interim check, superseded by R2_19/R2_20) |
+| R2 | `R2_17_sample_route_geometries.R` | full route lines from R2_19 | `data/Route/od_route_geometries_sample.gpkg` (run before step 8) |
+| R2 | `R2_18_why_258_routes_missing.R` | internet access (OSRM) | `tables/diagnostics/18_why_258_routes_missing.csv`, `_log.txt` (diagnostic only) |
 | R2 | `R2_15_supplementary_tables.R` | — | `tables/supplementary/` (Tables S3–S8, S10–S11 in the supplement's layout) |
 | R2 | `R2_01_faf_zone_route_count.R` | FAF CSV | `tables/supplementary/TableS1_sctg_composition.csv` |
+| R2 | `R2_21_route_sample_summary.R` | — (run after R2_15) | `tables/route_sample_summary.xlsx`: route sample and the routes and observations behind every table and figure |
 
-All intermediate files from steps 0–6 are included in the repository. Steps 7 onward therefore run without the raw FAF and gridMET files or internet access. Running 7a, 7b, 8, 9, R2_02–R2_06, R2_11, R2_12 and R2_15 from the repository root regenerates every file in `figures/` and `tables/` except Table S1, which needs the raw FAF file (`R2_01`; the path can be set with the `FAF_CSV` environment variable). The log of the latest full run is in `tables/diagnostics/run_log.txt`.
+All intermediate files from steps 0–6 are included in the repository. Steps 7 onward therefore run without the raw FAF and gridMET files or internet access. Running 4, 5, 6, R2_04, 7a, 7b, 8, 9, R2_02, R2_03, R2_05, R2_06, R2_11, R2_12, R2_15 and R2_21 from the repository root regenerates every file in `figures/` and `tables/` except Table S1, which needs the raw FAF file (`R2_01`; the path can be set with the `FAF_CSV` environment variable). Steps 6 and R2_04 also need the FAF CSV; R2_17 needs the full route lines from R2_19, which are not in the repository because of their size. The log of the latest full run is in `tables/diagnostics/run_log_2026-11-11_fullgeom.txt`.
 
 ## Figures and tables
 
 | Manuscript item | File | Script | Data |
 |---|---|---|---|
-| Figure 1 | `figures/figure1/figure1.png` | `08_main_figures.R` | main panel; `od_route_geometries_conus.gpkg` |
+| Figure 1 | `figures/figure1/figure1.png` | `08_main_figures.R` | main panel; `od_route_geometries_sample.gpkg` (routes coloured by the regression SVI quartile) |
 | Figure 2 (a–d tons, e–h ton-miles) | `figures/figure2/coef_plot_tons_byVAR.png`, `coef_plot_tmiles_byVAR.png` | `08_main_figures.R` | main panel; FAF truck distance band |
 | Figure 3 | `figures/figure3/coef_svi_tons_byVAR.png`, `coef_svi_tonmiles_byVAR.png` | `08_main_figures.R` | main panel; SVI quartiles |
 | Figure 4 | `figures/figure4/Share_Tons_Dist_byVAR.png`, `Share_TMiles_Dist_byVAR.png` | `07b` → `08` | main panel; FAF truck distance band |
 | Figure 5 | `figures/figure5/Share_Tons_SVI_byVAR.png`, `Share_TMiles_SVI_byVAR.png` | `07b` → `08` | main panel; SVI quartiles |
 | Figure S1 | `figures/supplementary/FigureS1_FAF_Zones.png` | `R2_03_faf_zone_map.R` | CFS shapefiles; main panel |
-| Figures S2–S4 | `figures/supplementary/FigureS2_Short.png`, `FigureS3_Medium.png`, `FigureS4_Long.png` | `09_supplementary_maps.R` | route geometries; main panel |
+| Figures S2–S4 | `figures/supplementary/FigureS2_Short.png`, `FigureS3_Medium.png`, `FigureS4_Long.png` | `09_supplementary_maps.R` | `od_route_geometries_sample.gpkg`; main panel |
 | Figure S5 | `figures/supplementary/FigureS5_Trends_Overall.png` | `08_main_figures.R` | main panel |
 | Figures S6–S7 | `figures/supplementary/FigureS6_Trends_Distance.png`, `FigureS7_Trends_SVI.png` | `08_main_figures.R` | main panel |
 | Table S1 | `tables/supplementary/TableS1_sctg_composition.csv` | `R2_01_faf_zone_route_count.R` | raw FAF CSV |
