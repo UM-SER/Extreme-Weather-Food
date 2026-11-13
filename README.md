@@ -1,6 +1,6 @@
 # Associations between extreme weather exposure and U.S. food freight shipments
 
-This repository contains the replication code and data for the manuscript *"Extreme weather negatively impacts U.S. food freight shipment"* (Environmental Research Letters, manuscript ERL-124875). Questions can be sent to [contact name, email].
+This repository contains the replication code and data for the manuscript *"Associations between extreme weather exposure and U.S. food freight shipments"*. Please direct questions to **Dr. Haoluan Wang** at haoluan.wang@miami.edu, who may pass them to the appropriate coauthor(s).
 
 ## Repository organization
 
@@ -142,14 +142,3 @@ Results for the alternative specifications are in sibling folders of `tables/mai
 ## Software
 
 R 4.5.2 with the following packages: fixest 0.13.2, sf 1.0.23, osrm 4.2.0, exactextractr 0.10.1, terra 1.8.86, data.table 1.17.8, dplyr 1.1.4, tidyr 1.3.1, stringr 1.6.0, readr 2.1.6, readxl 1.4.5, ggplot2 4.0.1, patchwork 1.3.2, broom, tigris 2.2.1, units 1.0.0, purrr 1.2.0.
-
-## Known issues (to be resolved before release)
-
-- **Distance groups changed.** The submitted manuscript grouped Figure 2 by the FAF band taken as the maximum over all transport modes, and Figure 4 by OSRM route length. The code now uses the FAF truck band for both. Figure captions and the text on distance results need to be updated to the new estimates.
-- **Precipitation and wind averages.** The simple-average heavy-precipitation and high-wind variables average only over the traversed counties that had at least one event in the year. The temperature variables and all `distw*` variables are not affected.
-- **County boundaries for the temperature baselines.** `03b_temperature_baselines.R` reads `data/Shapefile/cb_2023_us_county_500k.shp` (2023 cartographic boundary file, 1:500k), which is not included; download it from the Census Bureau. The daily series use the 2017 1:20m file. The baseline files themselves are included.
-- **Figure 5 significance stars.** The submitted Figure 5 marked significance at the 10%/5%/1% levels, while the caption states 5%/1%/0.1%. The code now assigns stars by the caption's levels.
-
-## License
-
-[To be decided]
